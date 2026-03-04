@@ -1,27 +1,19 @@
-# Task Management REST API
+# My Task Management App
 
-Built with Vanilla PHP and PDO for MySQL. Includes user authentication, full CRUD for tasks with soft deletes, filtering by status, pagination, and a basic browser-based frontend.
+This is a simple PHP app for managing tasks. I built it to show how I think about problems.
 
-## Setup Instructions
+## How to Set Up
+1. Download this from GitHub.
+2. Make a MySQL database called taskdb.
+3. Run this SQL in your database tool (like phpMyAdmin):
+   CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, password VARCHAR(255) NOT NULL);
+   CREATE TABLE tasks (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL, title VARCHAR(255) NOT NULL, description TEXT, status ENUM('pending', 'done') DEFAULT 'pending', deleted_at DATETIME DEFAULT NULL, FOREIGN KEY (user_id) REFERENCES users(id));
+4. Copy .env.example to .env and add your DB info.
+5. Put the folder in XAMPP htdocs and start Apache/MySQL.
+6. Open frontend/login.html in browser.
 
-1. Clone the repository: `git clone https://github.com/Sethumxe/task-management-api.git`
-2. Set up MySQL database:
-   - Create a database named `taskdb`.
-   - Run the following SQL to create tables:
+## What I Assumed
+- Simple login with sessions.
+- Tasks per user, soft delete with time stamp.
+- Basic pages, no fancy design.
 
-```sql
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE tasks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    description TEXT,
-    status ENUM('pending', 'done') DEFAULT 'pending',
-    deleted_at DATETIME DEFAULT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
