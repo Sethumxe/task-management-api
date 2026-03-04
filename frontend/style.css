@@ -1,46 +1,138 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
     background: #f4f6f9;
+    color: #333;
+}
+
+.dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    margin-bottom: 30px;
 }
 
-.container {
-    width: 400px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
 }
 
-h1 {
-    text-align: center;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background: #007bff;
+.logout-btn {
+    padding: 8px 14px;
+    background: #e74c3c;
     border: none;
     color: white;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
+.logout-btn:hover {
+    background: #c0392b;
 }
 
-.task {
-    background: #f1f1f1;
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+input, textarea, select {
+    width: 100%;
     padding: 10px;
-    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.primary-btn {
+    background: #3498db;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #2980b9;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-list li {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+.task-list strong {
+    font-size: 16px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pagination button {
+    background: #2c3e50;
+    color: white;
+}
+
+.pagination button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
 }
