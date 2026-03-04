@@ -1,4 +1,4 @@
-const API = "http://localhost/task-management-api/api";
+const API = "http://localhost/task-management-api-main/api";
 
 async function register() {
     const email = email.value;
