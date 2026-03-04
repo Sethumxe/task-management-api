@@ -8,23 +8,21 @@ This is a simple PHP app for managing tasks. I built it to show how I think abou
 3. Run this SQL in your database tool (like phpMyAdmin):
 ```sql
 CREATE DATABASE taskdb;
-
 USE taskdb;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
 );
 
 CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    title VARCHAR(255) NOT NULL,
+    user_id INT,
+    title VARCHAR(255),
     description TEXT,
-    status ENUM('pending', 'done') DEFAULT 'pending',
-    deleted_at DATETIME DEFAULT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    status VARCHAR(20),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 ```
 
