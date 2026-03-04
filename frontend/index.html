@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <button onclick="logout()">Logout</button>
+    <h2>Add Task</h2>
+    <input id="title" placeholder="Title" required>
+    <textarea id="description" placeholder="Description"></textarea>
+    <select id="status">
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+    </select>
+    <button onclick="createTask()">Add</button>
+
+    <h2>Tasks</h2>
+    <select id="filter">
+        <option value="">All</option>
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+    </select>
+    <button onclick="loadTasks(1)">Filter</button>
+    <ul id="taskList"></ul>
+    <button id="prevPage" onclick="prevPage()" disabled>Previous</button>
+    <button id="nextPage" onclick="nextPage()" disabled>Next</button>
+    <script src="script.js"></script>
+</body>
+</html>
