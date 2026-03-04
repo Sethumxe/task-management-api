@@ -1,37 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Manager</title>
+    <title>Task Manager Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+   
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="container">
-    <h1>Task Manager</h1>
-    <button onclick="logout()">Logout</button>
+<div class="dashboard">
 
-    <h2>Add Task</h2>
-    <input id="title" placeholder="Title">
-    <textarea id="description" placeholder="Description"></textarea>
-    <select id="status">
-        <option value="pending">Pending</option>
-        <option value="done">Done</option>
-    </select>
-    <button onclick="createTask()">Add</button>
+    
+    <header class="header">
+        <h1>Task Manager</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
 
-    <h2>Tasks</h2>
-    <select id="filter">
-        <option value="">All</option>
-        <option value="pending">Pending</option>
-        <option value="done">Done</option>
-    </select>
-    <button onclick="loadTasks(1)">Filter</button>
+    
+    <section class="card">
+        <h2>Add New Task</h2>
 
-    <ul id="taskList"></ul>
+        <div class="form-group">
+            <input id="title" type="text" placeholder="Task Title">
+        </div>
 
-    <button id="prevPage" onclick="prevPage()" disabled>Previous</button>
-    <button id="nextPage" onclick="nextPage()" disabled>Next</button>
+        <div class="form-group">
+            <textarea id="description" placeholder="Task Description"></textarea>
+        </div>
+
+        <div class="form-row">
+            <select id="status">
+                <option value="pending">Pending</option>
+                <option value="done">Done</option>
+            </select>
+
+            <button class="primary-btn" onclick="createTask()">Add Task</button>
+        </div>
+    </section>
+
+    
+    <section class="card">
+        <div class="task-header">
+            <h2>Your Tasks</h2>
+
+            <div class="filter-group">
+                <select id="filter">
+                    <option value="">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="done">Completed</option>
+                </select>
+
+                <button onclick="loadTasks(1)">Filter</button>
+            </div>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <div class="pagination">
+            <button id="prevPage" onclick="prevPage()" disabled>Previous</button>
+            <button id="nextPage" onclick="nextPage()" disabled>Next</button>
+        </div>
+    </section>
+
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
