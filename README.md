@@ -7,6 +7,10 @@ This is a simple PHP app for managing tasks. I built it to show how I think abou
 2. Make a MySQL database called taskdb.
 3. Run this SQL in your database tool (like phpMyAdmin):
 ```sql
+CREATE DATABASE taskdb;
+
+USE taskdb;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
